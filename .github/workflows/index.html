@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #e0f7fa;
+      text-align: center;
+    }
+
+    .page {
+      display: none;
+      padding: 100px 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: white;
+      background-color: #00796b;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Page -->
+  <div id="welcomePage" class="page active">
+    <h1>Welcome to My Website</h1>
+    <a href="#" class="button" onclick="showPage('secondPage')">Go to Second Page</a>
+  </div>
+
+  <!-- Second Page -->
+  <div id="secondPage" class="page">
+    <h2>This is the Second Page</h2>
+    <a href="#" class="button" onclick="showPage('welcomePage')">Back to Welcome Page</a>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.getElementById("welcomePage").classList.remove("active");
+      document.getElementById("secondPage").classList.remove("active");
+      document.getElementById(pageId).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
